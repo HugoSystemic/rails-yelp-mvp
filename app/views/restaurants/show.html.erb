@@ -1,0 +1,16 @@
+<h2><%= @restaurants.name %></h2>
+<p><%= @restaurants.address %></p>
+<p><%= @restaurants.category %></p>
+<p><%= @restaurants.phone_number %></p>
+
+<%= link_to "Add a review", new_restaurant_review_path(@restaurants)%>
+
+<ul>
+  <% @restaurants.reviews.each do |review| %>
+  <li>Review: <%= review.content %> Rating : <%= review.rating %></li>
+  <% end %>
+</ul>
+
+<%= link_to restaurants_path do %>
+<p>retourner à la liste des restp</p>
+<% end %>
